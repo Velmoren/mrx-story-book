@@ -1,0 +1,30 @@
+<!--<mat-card *ngIf="(state$ | async) as state" >-->
+<!--  &lt;!&ndash;        <mat-card-header>&ndash;&gt;-->
+<!--  &lt;!&ndash;          <mat-icon>visibility</mat-icon>&ndash;&gt;-->
+<!--  &lt;!&ndash;          Preview&ndash;&gt;-->
+<!--  &lt;!&ndash;        </mat-card-header>&ndash;&gt;-->
+<!--  <mat-card-content style="padding-top: 0">-->
+<!--    <div class="code-wrapper hljs">-->
+<!--      <mat-tab-group dynamicHeight>-->
+<!--        <mat-tab *ngFor="let file of state.gist?.files | keyvalue" [label]="'asdasdasd'">-->
+<!--&lt;!&ndash;          <app-code [code]="state.gist | gistFile: file.key" [lineNumbers]="true"></app-code>&ndash;&gt;-->
+<!--        </mat-tab>-->
+<!--      </mat-tab-group>-->
+<!--    </div>-->
+<!--  </mat-card-content>-->
+<!--  <mat-card-footer>-->
+<!--    <a mat-button class="gist-url" [href]="state?.gist?.html_url" target="_blank">-->
+<!--      <mat-icon>link</mat-icon>-->
+<!--      Open gist on Github-->
+<!--    </a>-->
+<!--  </mat-card-footer>-->
+<!--</mat-card>-->
+<h1>ngx-highlightjs</h1>
+
+<pre><code [highlight]="code" [languages]="['typescript', 'xml']" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+
+<button (click)="changeTheme()">Change theme</button>
+
+<h4>Highlight response</h4>
+<pre>{{ response | json }}</pre>

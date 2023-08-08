@@ -1,0 +1,39 @@
+<mrx-content-wrapper maxWidth="860px" customClasses="pt-5">
+  <div class="row mb-4">
+    <div class="col">
+      <div class="d-flex align-items-start justify-content-start">
+        <span
+          class="mrx-icon icon-burger icon-font-24 cursor-pointer mr-2"
+          style="margin-top: 6px"
+          (click)="toggleSidebar()"
+        ></span>
+        <h2>Компонент</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col">
+      <mrx-tabs-group customClasses="mb-0" size="large" [isResponsive]="true">
+        <mrx-tab
+          *ngFor="let tab of routes"
+          customClasses="px-4"
+          [active]="activeTabId === tab.id"
+          (onClick)="onTabClick(tab.id)"
+        >
+          {{ tab.text }}
+        </mrx-tab>
+      </mrx-tabs-group>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="markdown-content mxw-px-563">
+        <markdown
+          lineNumbers
+          [start]="5"
+          src="/assets/docs/main/component.md">
+          </markdown>
+      </div>
+    </div>
+  </div>
+</mrx-content-wrapper>

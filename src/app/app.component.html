@@ -1,0 +1,21 @@
+<div class="d-block d-lg-flex align-items-stretch justify-content-between bg-bg1" style="min-height: 100vh">
+  <div class="side-menu bg-light">
+    <mrx-menu-admin
+      [model]="menuModel"
+      [open]="(sidebarActive$ | async)!"
+      (toggleMenu)="toggleMenu($event)"
+    >
+      <ng-template #headTemplate>
+        <a class="px-4 py-12px mb-4 d-flex" routerLink="/">
+          <img src="/assets/images/logo.svg" class="mr-2">
+          <img src="/assets/images/logo-myrta.svg">
+        </a>
+      </ng-template>
+    </mrx-menu-admin>
+  </div>
+  <div class="main-page px-4 flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
